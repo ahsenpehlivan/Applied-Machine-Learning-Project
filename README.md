@@ -8,7 +8,7 @@ This repository contains the collaborative machine learning pipeline for Formula
 
 - **Aşama 1 & 2: Veri Birleştirme, Temizlik ve Özellik Mühendisliği (Data Merging, Preprocessing, Feature Engineering)**
     - **Status:**
-    - Data Merging and Preprocessing completed by Yiğit.
+    - Data Merging and Preprocessing **completed by Yiğit**.
     - Feature Engineering is currently in progress and will be completed by Teammate 4.
 - **Aşama 3: Model Seçimi - Hedef 1: Sınıflandırma (Classification for Podium Prediction - Top 3)**
   - *Status:* **✅ Completed by Ahsen** (XGBoost, LightGBM)
