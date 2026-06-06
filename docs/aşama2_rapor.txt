@@ -1,0 +1,42 @@
+F1 PROJESİ — AŞAMA 2: FEATURE ENGINEERING (ÖZELLİK MÜHENDİSLİĞİ) RAPORU
+
+Dosya: df_train_ready.parquet
+Toplam Sütun Sayısı: 39 (31 Orijinal + 8 Yeni Özellik)
+Hedef Değişkenler: is_podium (Sınıflandırma) & personal_best_lap_ms (Regresyon)
+
+Merhaba Takım,
+Aşama 2 (Feature Engineering) süreci başarıyla tamamlanmış ve veri seti model eğitimine (Aşama 3) hazır hale getirilmiştir. Veri sızıntısını (Data Leakage) önlemek adına tüm geçmiş performans hesaplamalarında o anki yarış verisi gizlenmiş shift(1) ve sadece geçmiş veriler dikkate alınmıştır.
+
+Eklenen yeni özellikler ve kullanım amaçları şunlardır:
+
+1. Form Özellikleri (Momentum)
+
+recent_quali_form: Pilotun son 3 yarışındaki ortalama Sıralama Turu (Qualifying) pozisyonudur. Modelin, pilotun o anki sıcak formunu algılamasını sağlar.
+
+2. Pist Özellikleri (Circuit Dominance)
+
+circuit_experience: Pilotun o spesifik pistte (örn. Monaco) daha önce kaç kez yarıştığı bilgisidir (Deneyim).
+
+circuit_podium_count: Pilotun ilgili pistte geçmişte kazandığı toplam podyum sayısıdır.
+
+circuit_dominance_rate: Pilotun o pistteki geçmiş podyum sayısının, geçmiş yarış sayısına oranıdır. Modelin "ev sahibi avantajı" veya pist yatkınlığını ölçmesi için tasarlanmıştır.
+
+3. Seri Özellikleri (İstikrar ve Sıcak Form)
+
+career_experience: Pilotun kariyeri boyunca o güne kadar çıktığı toplam yarış sayısıdır.
+
+career_total_podiums: Pilotun o güne kadarki toplam podyum sayısıdır.
+
+career_podium_rate: Toplam podyum sayısının toplam yarış sayısına oranıdır (Genel İstikrar).
+
+recent_podium_streak: Pilotun son 3 yarışın kaçında podyuma çıktığı bilgisidir (Sıcak Podyum Serisi).
+
+Model Eğitimi İçin Notlar:
+
+Hedef 1 (XGBoost/LightGBM Sınıflandırma): y değişkeni olarak is_podium sütununu kullanabilirsiniz.
+
+Hedef 2 (Random Forest/LightGBM Regresyon): y değişkeni olarak personal_best_lap_ms sütununu kullanabilirsiniz.
+
+Tüm NaN değerler uygun istatistiksel metotlarla doldurulmuştur, ekstra bir imputasyon yapmanıza gerek yoktur.
+
+Veri date sütununa göre sıralıdır.

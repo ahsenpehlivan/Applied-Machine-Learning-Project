@@ -1,0 +1,29 @@
+{
+  "train_rows": 6411,
+  "val_rows": 1280,
+  "test_rows": 1279,
+  "train_races": 300,
+  "val_races": 64,
+  "test_races": 64,
+  "positive_rate_train": 0.14038371548900327,
+  "positive_rate_test": 0.15011727912431588,
+  "selected_threshold": 0.58,
+  "validation_f1_best_threshold": 0.6993006993006993,
+  "test_f1": 0.6067961165048543,
+  "test_precision": 0.5681818181818182,
+  "test_recall": 0.6510416666666666,
+  "test_roc_auc": 0.9165947945415516,
+  "confusion_matrix": [
+    [
+      992,
+      95
+    ],
+    [
+      67,
+      125
+    ]
+  ],
+  "precision_at_3": 0.5989583333333333,
+  "recall_at_3": 0.5989583333333334,
+  "exact_top3_race_rate": 0.125
+}
