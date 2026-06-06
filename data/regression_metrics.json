@@ -1,0 +1,114 @@
+{
+  "objective": "Predict each driver's personal fastest race lap",
+  "prediction_time": "After qualifying and before the race",
+  "target": "personal_best_lap_ms",
+  "target_strategy": "Predict personal_best_lap_ms - best_quali_ms, then add best_quali_ms",
+  "training_residual_clip_quantiles": [
+    0.01,
+    0.99
+  ],
+  "selected_model": "LightGBM",
+  "selection_metric": "Validation MAE",
+  "best_lightgbm_parameters": {
+    "n_estimators": 700,
+    "learning_rate": 0.025,
+    "num_leaves": 15,
+    "max_depth": -1,
+    "min_child_samples": 30,
+    "subsample": 0.9,
+    "colsample_bytree": 0.85,
+    "reg_lambda": 2.0
+  },
+  "split": {
+    "train": {
+      "years": "2003-2018",
+      "rows": 6411
+    },
+    "validation": {
+      "years": "2019-2021",
+      "rows": 1200
+    },
+    "test": {
+      "years": "2022-2024",
+      "rows": 1359
+    }
+  },
+  "excluded_post_race_columns": [
+    "avg_pit_dur_ms",
+    "gap_to_fastest_ms",
+    "is_podium",
+    "pit_stop_count"
+  ],
+  "validation_results": [
+    {
+      "model": "Random Forest",
+      "mae_ms": 4890.973423523611,
+      "rmse_ms": 16948.853461158717,
+      "r2": 0.39684268628667807
+    },
+    {
+      "model": "LightGBM candidate 1",
+      "mae_ms": 4630.734002079579,
+      "rmse_ms": 17021.582593986972,
+      "r2": 0.3916551699226788
+    },
+    {
+      "model": "LightGBM candidate 2",
+      "mae_ms": 4583.624279795506,
+      "rmse_ms": 17010.641809515706,
+      "r2": 0.392436957468419
+    },
+    {
+      "model": "LightGBM candidate 3",
+      "mae_ms": 4605.57386264429,
+      "rmse_ms": 16935.356806119144,
+      "r2": 0.3978029122944259
+    }
+  ],
+  "test_results": [
+    {
+      "model": "Global median",
+      "mae_ms": 9465.046357615895,
+      "rmse_ms": 11321.878540985852,
+      "r2": -0.018726441541571104
+    },
+    {
+      "model": "Circuit median",
+      "mae_ms": 3461.3057395143487,
+      "rmse_ms": 5671.460206766117,
+      "r2": 0.7443708511235907
+    },
+    {
+      "model": "Random Forest",
+      "mae_ms": 2809.2496219294826,
+      "rmse_ms": 5372.3005043077665,
+      "r2": 0.7706275834154913
+    },
+    {
+      "model": "LightGBM",
+      "mae_ms": 2601.7877723768706,
+      "rmse_ms": 5092.323847782336,
+      "r2": 0.7939120375758779
+    }
+  ],
+  "yearly_test_results": [
+    {
+      "year": 2022,
+      "mae_ms": 2650.901736675622,
+      "rmse_ms": 4492.001258790878,
+      "r2": 0.8700766107082345
+    },
+    {
+      "year": 2023,
+      "mae_ms": 2641.929484536992,
+      "rmse_ms": 5334.55717646711,
+      "r2": 0.7614110023251808
+    },
+    {
+      "year": 2024,
+      "mae_ms": 2519.7992595545247,
+      "rmse_ms": 5375.582997107715,
+      "r2": 0.718658459750021
+    }
+  ]
+}

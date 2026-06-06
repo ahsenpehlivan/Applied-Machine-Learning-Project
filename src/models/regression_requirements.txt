@@ -1,0 +1,5 @@
+# Additional dependencies used only by regression_fastest_lap.py.
+# Core packages such as pandas, scikit-learn, LightGBM, and PyArrow are
+# already listed in the repository-level requirements.txt.
+matplotlib
+joblib

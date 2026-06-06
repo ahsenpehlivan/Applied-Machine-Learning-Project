@@ -1,0 +1,202 @@
+﻿feature,importance
+best_quali_ms,1324
+year,1181
+season_progress,934
+gap_to_pole_ms,817
+round,484
+lng,470
+alt,427
+con_pre_points,409
+lat,376
+career_experience,311
+driver_age,247
+quali_position,217
+recent_quali_form,216
+career_podium_rate,193
+grid,163
+drv_pre_points,159
+circuit_name_Marina Bay Street Circuit,126
+circuit_name_Circuit de Spa-Francorchamps,108
+circuit_name_Circuit of the Americas,107
+con_pre_position,107
+circuit_experience,105
+career_total_podiums,79
+drv_pre_position,70
+circuit_name_Circuit Gilles Villeneuve,54
+circuit_name_Buddh International Circuit,51
+con_pre_wins,44
+circuit_name_Istanbul Park,42
+circuit_dominance_rate,38
+circuit_name_Sepang International Circuit,37
+reached_q3,35
+circuit_podium_count,34
+circuit_name_Valencia Street Circuit,34
+circuit_name_Autodromo Enzo e Dino Ferrari,33
+driver_name_Pastor Maldonado,31
+circuit_name_Circuit de Barcelona-Catalunya,30
+circuit_name_Autódromo Internacional do Algarve,30
+circuit_name_Autodromo Nazionale di Monza,30
+circuit_name_Autódromo José Carlos Pace,29
+drv_pre_wins,28
+driver_name_Paul di Resta,26
+driver_name_Jarno Trulli,26
+circuit_name_Hockenheimring,26
+circuit_name_Silverstone Circuit,24
+constructor_name_HRT,24
+circuit_name_Red Bull Ring,23
+recent_podium_streak,23
+driver_name_Giancarlo Fisichella,23
+constructor_name_Minardi,21
+circuit_name_Shanghai International Circuit,20
+circuit_name_Albert Park Grand Prix Circuit,20
+circuit_name_Circuit de Monaco,20
+driver_name_Rubens Barrichello,19
+driver_name_Jaime Alguersuari,17
+circuit_name_Circuit de Nevers Magny-Cours,16
+constructor_name_Manor Marussia,15
+circuit_name_Baku City Circuit,15
+driver_name_Kimi Räikkönen,13
+constructor_name_Haas F1 Team,12
+driver_name_Romain Grosjean,11
+driver_name_Stoffel Vandoorne,11
+circuit_name_Yas Marina Circuit,10
+driver_name_Jenson Button,9
+circuit_name_Bahrain International Circuit,9
+constructor_name_Caterham,9
+driver_name_Timo Glock,9
+driver_name_Vitaly Petrov,8
+circuit_name_Suzuka Circuit,8
+driver_name_Max Verstappen,8
+driver_name_Kazuki Nakajima,6
+constructor_name_Virgin,6
+circuit_name_Nürburgring,5
+circuit_name_Circuit Paul Ricard,5
+circuit_name_Autódromo Hermanos Rodríguez,5
+circuit_name_Fuji Speedway,5
+circuit_name_Hungaroring,5
+driver_name_Max Chilton,4
+constructor_name_Toro Rosso,4
+driver_name_Sebastian Vettel,4
+constructor_name_Force India,4
+driver_name_Charles Leclerc,4
+driver_name_George Russell,4
+constructor_name_Sauber,4
+circuit_name_Korean International Circuit,3
+driver_name_Nico Rosberg,3
+circuit_name_Sochi Autodrom,3
+constructor_name_Honda,3
+constructor_name_Jaguar,3
+constructor_name_Lotus,3
+constructor_name_Renault,3
+constructor_name_McLaren,3
+driver_name_Ralf Schumacher,3
+constructor_name_Mercedes,2
+constructor_name_Red Bull,2
+driver_name_Vitantonio Liuzzi,2
+driver_name_Marcus Ericsson,2
+driver_name_Felipe Massa,2
+constructor_name_Alfa Romeo,1
+constructor_name_Lotus F1,1
+driver_name_David Coulthard,1
+constructor_name_Toyota,1
+constructor_name_Williams,1
+driver_name_Nico Hülkenberg,1
+circuit_name_Indianapolis Motor Speedway,1
+driver_name_Esteban Ocon,1
+driver_name_Kevin Magnussen,1
+driver_name_Lance Stroll,1
+driver_name_Antonio Giovinazzi,1
+driver_name_Sergio Pérez,1
+driver_name_Lewis Hamilton,1
+driver_name_Jos Verstappen,0
+driver_name_Juan Pablo Montoya,0
+driver_name_Jolyon Palmer,0
+driver_name_Jules Bianchi,0
+driver_name_Jean-Éric Vergne,0
+driver_name_Justin Wilson,0
+driver_name_Sébastien Buemi,0
+circuit_name_Jeddah Corniche Circuit,0
+circuit_name_Losail International Circuit,0
+driver_name_Jérôme d'Ambrosio,0
+driver_name_Jack Aitken,0
+driver_name_Kamui Kobayashi,0
+driver_name_Karun Chandhok,0
+driver_name_Lando Norris,0
+driver_name_Luca Badoer,0
+driver_name_Lucas di Grassi,0
+driver_name_Jacques Villeneuve,0
+driver_name_Giedo van der Garde,0
+driver_name_Heinz-Harald Frentzen,0
+driver_name_Christian Klien,0
+driver_name_Alexander Rossi,0
+driver_name_Alexander Wurz,0
+driver_name_André Lotterer,0
+driver_name_Anthony Davidson,0
+driver_name_Antônio Pizzonia,0
+driver_name_Brendon Hartley,0
+driver_name_Bruno Senna,0
+driver_name_Carlos Sainz,0
+driver_name_Charles Pic,0
+driver_name_Christijan Albers,0
+driver_name_Heikki Kovalainen,0
+driver_name_Cristiano da Matta,0
+driver_name_Daniel Ricciardo,0
+driver_name_Daniil Kvyat,0
+driver_name_Esteban Gutiérrez,0
+driver_name_Felipe Nasr,0
+driver_name_Fernando Alonso,0
+driver_name_Franck Montagny,0
+driver_name_Gianmaria Bruni,0
+driver_name_Giorgio Pantano,0
+driver_name_Marc Gené,0
+driver_name_Michael Schumacher,0
+circuit_name_Circuit Park Zandvoort,0
+constructor_name_BAR,0
+constructor_name_Jordan,0
+driver_name_Robert Doornbos,0
+driver_name_Robert Kubica,0
+driver_name_Roberto Merhi,0
+driver_name_Sakon Yamamoto,0
+driver_name_Scott Speed,0
+constructor_name_Ferrari,0
+driver_name_Sergey Sirotkin,0
+constructor_name_Brawn,0
+constructor_name_BMW Sauber,0
+constructor_name_Aston Martin,0
+driver_name_Mark Webber,0
+constructor_name_Alpine F1 Team,0
+constructor_name_AlphaTauri,0
+driver_name_Zsolt Baumgartner,0
+driver_name_Yuki Tsunoda,0
+driver_name_Yuji Ide,0
+driver_name_Will Stevens,0
+driver_name_Alexander Albon,0
+driver_name_Valtteri Bottas,0
+driver_name_Sébastien Bourdais,0
+driver_name_Tiago Monteiro,0
+driver_name_Rio Haryanto,0
+constructor_name_MF1,0
+driver_name_Ricardo Zonta,0
+constructor_name_Marussia,0
+driver_name_Markus Winkelhock,0
+driver_name_Takuma Sato,0
+driver_name_Mick Schumacher,0
+driver_name_Narain Karthikeyan,0
+driver_name_Nelson Piquet Jr.,0
+driver_name_Nicholas Latifi,0
+driver_name_Nick Heidfeld,0
+circuit_name_Autodromo Internazionale del Mugello,0
+driver_name_Nicolas Kiesa,0
+driver_name_Nikita Mazepin,0
+driver_name_Olivier Panis,0
+constructor_name_Super Aguri,0
+constructor_name_Spyker MF1,0
+constructor_name_Spyker,0
+driver_name_Pascal Wehrlein,0
+driver_name_Patrick Friesacher,0
+driver_name_Pedro de la Rosa,0
+constructor_name_Racing Point,0
+driver_name_Pierre Gasly,0
+driver_name_Pietro Fittipaldi,0
+driver_name_Ralph Firman,0
+driver_name_Adrian Sutil,0
