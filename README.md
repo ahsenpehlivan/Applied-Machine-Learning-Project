@@ -7,8 +7,9 @@ This repository contains the collaborative machine learning pipeline for Formula
 ![Roadmap Outline](docs/WhatsApp%20Image%202026-06-06%20at%2011.41.21.jpeg)
 
 - **Aşama 1 & 2: Veri Birleştirme, Temizlik ve Özellik Mühendisliği (Data Merging, Preprocessing, Feature Engineering)**
-  - *Status:* **Preprocessing and Data Merge Completed by Yiğit**. 
-               Feature Engineering Pending (To be added by Teammate 4) 
+    - **Status:**
+    - Data Merging and Preprocessing completed by Yiğit.
+    - Feature Engineering is currently in progress and will be completed by Teammate 4.
 - **Aşama 3: Model Seçimi - Hedef 1: Sınıflandırma (Classification for Podium Prediction - Top 3)**
   - *Status:* **✅ Completed by Ahsen** (XGBoost, LightGBM)
   - *Metrics:* F1, ROC-AUC, Precision@3
