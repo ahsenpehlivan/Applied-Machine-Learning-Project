@@ -1,0 +1,41 @@
+
+╔══════════════════════════════════════════════════════════╗
+║      F1 — AŞAMA 1 RAPORU: Veri Birleştirme & Temizlik   ║
+╚══════════════════════════════════════════════════════════╝
+
+1. VERİ KAYNAKLARI
+   results.csv       →   26,759 satır
+   races.csv         →    1,125 satır   (1950–2024)
+   drivers.csv       →      861 satır
+   qualifying.csv    →   10,494 satır  (2003+ kapsamı)
+   pit_stops.csv     →   11,371 satır  (2011+ kapsamı)
+   lap_times.csv     →  589,081 satır
+
+2. JOIN ANAHTARLARI
+   Ana anahtarlar:  raceId ← driverId ← constructorId
+   Circuit join:    circuitId
+   Status join:     statusId
+
+3. DATA LEAKAGE ÖNLEMİ
+   Düşürülen sütunlar (yarış sonrası): ['time', 'rank', 'fastestLap', 'positionText', 'position', 'number']
+   Hedef değişkenler (ASLA feature olarak kullanılmayacak):
+     - positionOrder, points, laps, milliseconds
+     - fastestLapTime, fastestLapSpeed
+
+4. NaN STRATEJİLERİ
+   Qualifying (pre-2003)  → yıl içi medyan ile dolduruldu
+   Pit stops (pre-2011)   → count=0, duration=medyan
+   Standings (1. yarış)   → 0 ile başlatıldı
+   Fastest lap (eski yarış) → yıl içi medyan
+   Sürücü yaşı            → yarış tarihinden hesaplandı
+
+5. ÇIKTI VERİLERİ
+   df_master.parquet       →  26,759 satır ×  48 sütun  (1950–2024)
+   df_model_ready.parquet  →   8,970 satır ×  31 sütun  (2003–2024)
+
+6. HEDEF DEĞİŞKENLER
+   is_podium           →  1,284 pozitif / 8,970 toplam  (14.3%)
+   personal_best_lap_ms →  ort. 91,093 ms
+
+7. MODEL-READY ÖZELLİKLER (20 adet)
+   season_progress, circuitId, lat, lng, alt, grid, quali_position, gap_to_pole_ms, best_quali_ms, reached_q3, pit_stop_count, avg_pit_dur_ms, drv_pre_points, drv_pre_position, drv_pre_wins, con_pre_points, con_pre_position, con_pre_wins, gap_to_fastest_ms, driver_age
