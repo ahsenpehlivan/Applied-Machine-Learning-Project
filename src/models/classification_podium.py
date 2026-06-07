@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import joblib
 import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
@@ -247,6 +248,10 @@ def main() -> None:
         encoding="utf-8",
     )
     predictions.to_csv("classification_test_predictions.csv", index=False, encoding="utf-8-sig")
+
+    # Demo için modelleri kaydet
+    joblib.dump(model, Path("classification_model.joblib"))
+    joblib.dump(transformer, Path("classification_transformer.joblib"))
 
     print("=== Podium Classification Report ===")
     print(f"Train / Val / Test race count: {metrics['train_races']} / {metrics['val_races']} / {metrics['test_races']}")

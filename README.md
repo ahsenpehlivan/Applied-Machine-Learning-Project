@@ -37,6 +37,17 @@ We utilize **LightGBM** and **XGBoost** to classify if a driver will secure a po
 | **F1-Score** | `0.606` | Harmonic mean of precision and recall. |
 | **Precision@3**| `0.598` | Accuracy when focusing strictly on our top 3 predicted drivers. |
 
+#### Visualizing the Classification Results
+
+<details open>
+<summary><b>Click to view Confusion Matrix & ROC Curve</b></summary>
+<br>
+<p align="center">
+  <img src="docs/classification_roc_curve.png" width="45%" alt="ROC Curve">
+  <img src="docs/classification_confusion_matrix.png" width="45%" alt="Confusion Matrix">
+</p>
+</details>
+
 ### ⏱️ Regression: Fastest Lap Time Prediction
 We target the `personal_best_lap_ms` using an offset strategy against the qualifying time. **LightGBM** emerged as the superior model.
 
