@@ -21,6 +21,7 @@ This project utilizes decades of historical race data to engineer complex featur
 - 🏆 **Podium Prediction (Classification)**: XGBoost and LightGBM models predict whether a driver will finish in the Top 3.
 - ⏱️ **Fastest Lap Prediction (Regression)**: Random Forest and LightGBM models forecast the personal best lap time for each driver.
 - 📊 **Interpretability**: Integrates feature importance metrics and SHAP analysis for highly transparent ML predictions.
+- 💻 **Interactive Live Demo**: Features a Streamlit-based web dashboard (`app.py`) for real-time race predictions and model showcasing.
 
 ---
 
@@ -93,6 +94,7 @@ We target the `personal_best_lap_ms` using an offset strategy against the qualif
 │   └── models/
 │       ├── classification_podium.py # Classification ML training
 │       └── regression_fastest_lap.py# Regression ML training
+├── app.py                           # 🚀 Streamlit Interactive Web Dashboard
 ├── requirements.txt                 # Project dependencies
 └── README.md                        # You are here!
 ```
@@ -134,6 +136,11 @@ python src/models/classification_podium.py
 **3. Train Fastest Lap Regression Model**
 ```bash
 python src/models/regression_fastest_lap.py
+```
+
+**4. Run the Interactive Web Dashboard (Demo)**
+```bash
+python -m streamlit run app.py
 ```
 
 ---
