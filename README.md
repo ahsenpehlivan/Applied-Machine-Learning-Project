@@ -1,76 +1,131 @@
-🏎️ F1 Predictive Modeling & Data Analysis
-A comprehensive Python-based machine learning pipeline designed to predict Formula 1 race outcomes. This collaborative project uses historical race data to engineer complex features, predict the Top 3 podium finishes (Classification), and forecast the fastest lap times (Regression).
+<div align="center">
+  
+# 🏎️ F1 Predictive Modeling & Data Analysis
 
-🚀 Features
-- **Data Merging & Cleaning**: Robust data leakage prevention, handling missing values, and merging multiple Formula 1 relational datasets.
-- **Advanced Feature Engineering**: Extracts dynamic contextual data such as rolling form averages, win streaks, circuit dominance, qualifying deltas, and pit stop strategies.
-- **Podium Prediction (Classification)**: Utilizes XGBoost and LightGBM models to predict whether a driver will finish in the Top 3. Evaluated using F1, ROC-AUC, and Precision@3.
-- **Fastest Lap Prediction (Regression)**: Employs Random Forest and LightGBM regression models to predict the fastest lap times. Evaluated using MAE, RMSE, and R².
-- **Interpretability**: Integrates feature importance metrics and SHAP analysis for transparent ML predictions.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg?style=for-the-badge&logo=python)](https://www.python.org)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+[![XGBoost](https://img.shields.io/badge/XGBoost-1.7+-green.svg?style=for-the-badge)](https://xgboost.readthedocs.io)
+[![LightGBM](https://img.shields.io/badge/LightGBM-4.0+-brightgreen.svg?style=for-the-badge)](https://lightgbm.readthedocs.io)
 
-📁 Project Structure
+*A collaborative, comprehensive machine learning pipeline designed to forecast Formula 1 race outcomes using historical data.*
+
+---
+</div>
+
+## 🚀 Overview & Features
+
+This project utilizes decades of historical race data to engineer complex features, predict **Top 3 podium finishes** (Classification), and forecast the **fastest lap times** (Regression). 
+
+- 🧹 **Data Merging & Cleaning**: Robust data leakage prevention, strict NaN management, and intelligent joining of multiple F1 relational datasets.
+- ⚙️ **Advanced Feature Engineering**: Extracts dynamic contextual features like rolling form averages, win streaks, circuit dominance, qualifying deltas, and pit stop strategies.
+- 🏆 **Podium Prediction (Classification)**: XGBoost and LightGBM models predict whether a driver will finish in the Top 3.
+- ⏱️ **Fastest Lap Prediction (Regression)**: Random Forest and LightGBM models forecast the personal best lap time for each driver.
+- 📊 **Interpretability**: Integrates feature importance metrics and SHAP analysis for highly transparent ML predictions.
+
+---
+
+## 📈 Model Performance & Results
+
+Our models were rigorously tested against recent racing seasons (2022-2024 test split). Here are the highlights of our predictive performance:
+
+### 🏆 Classification: Podium Prediction (Top 3)
+We utilize **LightGBM** and **XGBoost** to classify if a driver will secure a podium finish.
+
+| Metric | Score | Description |
+| :--- | :---: | :--- |
+| **ROC-AUC** | `0.916` | High capability in distinguishing podium vs non-podium drivers. |
+| **F1-Score** | `0.606` | Harmonic mean of precision and recall. |
+| **Precision@3**| `0.598` | Accuracy when focusing strictly on our top 3 predicted drivers. |
+
+### ⏱️ Regression: Fastest Lap Time Prediction
+We target the `personal_best_lap_ms` using an offset strategy against the qualifying time. **LightGBM** emerged as the superior model.
+
+| Model | MAE (ms) | RMSE (ms) | R² Score |
+| :--- | :---: | :---: | :---: |
+| Global Median Baseline | 9,465 | 11,321 | -0.018 |
+| Circuit Median Baseline | 3,461 | 5,671 | 0.744 |
+| **Random Forest** | 2,809 | 5,372 | 0.770 |
+| **LightGBM (Best)** | **2,601** | **5,092** | **0.793** |
+
+*On average, our LightGBM model predicts a driver's fastest lap time with an error of just ~2.6 seconds (2601 ms), heavily outperforming naive baselines.*
+
+#### Visualizing the Regression Results
+
+<details open>
+<summary><b>Click to view Model Comparisons & Residuals</b></summary>
+<br>
+<p align="center">
+  <img src="docs/regression_model_comparison.png" width="45%" alt="Model Comparison">
+  <img src="docs/regression_actual_vs_predicted.png" width="45%" alt="Actual vs Predicted">
+</p>
+</details>
+
+---
+
+## 📁 Project Structure
+
+```text
 .
 ├── data/
 │   ├── df_master.parquet            # Merged and cleaned master dataset
-│   ├── df_model_ready.parquet       # Final dataset with engineered features
-│   ├── df_train_ready.parquet       # Scaled data ready for classification
-│   └── ...                          # Metrics (JSON), predictions (CSV), and models (Joblib)
+│   ├── df_train_ready.parquet       # Scaled data ready for ML training
+│   └── ...                          # JSON metrics and Joblib model outputs
 ├── docs/
-│   ├── aşama1_rapor.txt             # Stage 1: Data preparation reports
-│   ├── aşama2_rapor.txt             # Stage 2: Feature engineering reports
-│   ├── classification_guide_tr.md   # Documentation for the classification model
-│   ├── regression_report.md         # Comprehensive regression analysis
-│   └── *.png                        # Model comparison and evaluation plots
+│   ├── stage1_report.txt            # Stage 1: Data prep reports
+│   ├── classification_guide_tr.md   # Podium classification guide
+│   ├── regression_report.md         # Fastest lap regression analysis
+│   └── *.png                        # Output plots and visualizations
 ├── src/
 │   ├── features/
-│   │   ├── feature_engineering.ipynb # Notebook for exploratory feature analysis
-│   │   └── preprocessing.py         # Data cleaning and manipulation scripts
+│   │   ├── feature_engineering.ipynb# EDA & Feature exploration
+│   │   └── preprocessing.py         # Automated ETL scripts
 │   └── models/
-│       ├── classification_podium.py # ML Classification models for Podium Prediction
-│       └── regression_fastest_lap.py# ML Regression models for Fastest Lap Prediction
-├── .gitignore                       # Ignored files and folders
-├── requirements.txt                 # Python project dependencies
-└── README.md                        # Project documentation
-
-🛠️ Installation & Setup
-Clone the repository / Open the folder
-
-Create and Activate a Virtual Environment
-
-```bash
-python -m venv .venv
-# For Windows
-.\.venv\Scripts\activate
-# For Mac/Linux
-source .venv/bin/activate
+│       ├── classification_podium.py # Classification ML training
+│       └── regression_fastest_lap.py# Regression ML training
+├── requirements.txt                 # Project dependencies
+└── README.md                        # You are here!
 ```
 
-Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+---
 
-💻 Usage
-You can run the individual ML pipelines straight from the terminal. Make sure you are in the project root directory.
+## 🛠️ Installation & Setup
 
-To run the data preprocessing pipeline (Stage 1 & 2):
+1. **Clone the repository** and navigate to the root directory.
+2. **Create and Activate a Virtual Environment:**
+   ```bash
+   python -m venv .venv
+   # Windows:
+   .\.venv\Scripts\activate
+   # Mac/Linux:
+   source .venv/bin/activate
+   ```
+3. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## 💻 Usage & Pipeline Execution
+
+Execute the modular pipeline directly from the root directory:
+
+**1. Data Preprocessing & Feature Engineering**
 ```bash
 python src/features/preprocessing.py
 ```
 
-To train and evaluate the classification models (Podium Prediction):
+**2. Train Podium Classification Model**
 ```bash
 python src/models/classification_podium.py
 ```
 
-To train and evaluate the regression models (Fastest Lap Prediction):
+**3. Train Fastest Lap Regression Model**
 ```bash
 python src/models/regression_fastest_lap.py
 ```
 
-🧠 How the Algorithm Works
-The project follows a 4-Stage Roadmap:
-1. **Data Preprocessing**: Filters pre/post race data points to prevent data leakage and applies rigorous NaN management.
-2. **Feature Engineering**: Calculates driver forms, momentum scores, track history, and grid position strategies.
-3. **Model Selection**: Dedicated scripts train specialized models (LightGBM/XGBoost/Random Forest) for separate predictive targets.
-4. **Evaluation**: Outputs metrics and detailed visuals (saved in `docs/` and `data/`) to compare model efficacy and discover the most important features driving F1 race outcomes.
+---
+<div align="center">
+  <i>Developed by Ahsen and Team.</i>
+</div>
