@@ -5,3 +5,5 @@ xgboost
 lightgbm
 pyarrow
 fastparquet
+matplotlib
+joblib

@@ -1,79 +1,76 @@
-# Formula 1 Race Prediction Project
+🏎️ F1 Predictive Modeling & Data Analysis
+A comprehensive Python-based machine learning pipeline designed to predict Formula 1 race outcomes. This collaborative project uses historical race data to engineer complex features, predict the Top 3 podium finishes (Classification), and forecast the fastest lap times (Regression).
 
-This repository contains the collaborative machine learning pipeline for Formula 1 race predictions. The project is divided into multiple stages based on our project roadmap. 
+🚀 Features
+- **Data Merging & Cleaning**: Robust data leakage prevention, handling missing values, and merging multiple Formula 1 relational datasets.
+- **Advanced Feature Engineering**: Extracts dynamic contextual data such as rolling form averages, win streaks, circuit dominance, qualifying deltas, and pit stop strategies.
+- **Podium Prediction (Classification)**: Utilizes XGBoost and LightGBM models to predict whether a driver will finish in the Top 3. Evaluated using F1, ROC-AUC, and Precision@3.
+- **Fastest Lap Prediction (Regression)**: Employs Random Forest and LightGBM regression models to predict the fastest lap times. Evaluated using MAE, RMSE, and R².
+- **Interpretability**: Integrates feature importance metrics and SHAP analysis for transparent ML predictions.
 
-## 📌 Project Roadmap & Current Status
-
-![Roadmap Outline](docs/WhatsApp%20Image%202026-06-06%20at%2011.41.21.jpeg)
-
-- **Aşama 1 & 2: Veri Birleştirme, Temizlik ve Özellik Mühendisliği (Data Merging, Preprocessing, Feature Engineering)**
-    - **Status:**
-    - Data Merging and Preprocessing **completed by Yiğit**.
-    - Feature Engineering is currently in progress and will be completed by Teammate 4.
-- **Aşama 3: Model Seçimi - Hedef 1: Sınıflandırma (Classification for Podium Prediction - Top 3)**
-  - *Status:* **✅ Completed by Ahsen** (XGBoost, LightGBM)
-  - *Metrics:* F1, ROC-AUC, Precision@3
-- **Aşama 3: Model Seçimi - Hedef 2: Regresyon (Regression for Fastest Lap Prediction)**
-  - *Status:* Pending (To be added by Teammate 2)
-  - *Metrics:* MAE, RMSE, R² (Random Forest, LightGBM)
-- **Aşama 4: Değerlendirme ve Sunum (Evaluation Metrics & Reporting)**
-  - *Status:* Ongoing
-
----
-
-## 📁 Repository Structure
-
-```text
+📁 Project Structure
 .
-├── data/                        # Processed data, predictions, and metrics
-│   ├── df_train_ready.parquet
-│   └── ...
-├── src/                         # Source code
-│   ├── features/                # Data cleaning and feature engineering scripts
-│   ├── models/                  # ML models (Classification, Regression)
-│   │   └── classification_podium.py
-│   └── scraper/                 # (Optional) Scrapers for raw data
-├── docs/                        # Reports, guides, and visual assets
-├── requirements.txt             # Project dependencies
-└── README.md                    # Project documentation
+├── data/
+│   ├── df_master.parquet            # Merged and cleaned master dataset
+│   ├── df_model_ready.parquet       # Final dataset with engineered features
+│   ├── df_train_ready.parquet       # Scaled data ready for classification
+│   └── ...                          # Metrics (JSON), predictions (CSV), and models (Joblib)
+├── docs/
+│   ├── aşama1_rapor.txt             # Stage 1: Data preparation reports
+│   ├── aşama2_rapor.txt             # Stage 2: Feature engineering reports
+│   ├── classification_guide_tr.md   # Documentation for the classification model
+│   ├── regression_report.md         # Comprehensive regression analysis
+│   └── *.png                        # Model comparison and evaluation plots
+├── src/
+│   ├── features/
+│   │   ├── feature_engineering.ipynb # Notebook for exploratory feature analysis
+│   │   └── preprocessing.py         # Data cleaning and manipulation scripts
+│   └── models/
+│       ├── classification_podium.py # ML Classification models for Podium Prediction
+│       └── regression_fastest_lap.py# ML Regression models for Fastest Lap Prediction
+├── .gitignore                       # Ignored files and folders
+├── requirements.txt                 # Python project dependencies
+└── README.md                        # Project documentation
+
+🛠️ Installation & Setup
+Clone the repository / Open the folder
+
+Create and Activate a Virtual Environment
+
+```bash
+python -m venv .venv
+# For Windows
+.\.venv\Scripts\activate
+# For Mac/Linux
+source .venv/bin/activate
 ```
 
----
+Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-## 🤖 Instructions for AI Agents & Teammates
+💻 Usage
+You can run the individual ML pipelines straight from the terminal. Make sure you are in the project root directory.
 
-Welcome, collaborating Agents! To ensure a smooth integration of the codebase without conflicts, please follow these guidelines:
+To run the data preprocessing pipeline (Stage 1 & 2):
+```bash
+python src/features/preprocessing.py
+```
 
-### For the Agent Handling Stage 1 & 2 (Data Pipeline)
-Your task is to merge, clean, and engineer features from the raw data.
-1. Place your data preparation and feature engineering scripts inside the `src/features/` directory (e.g., `src/features/data_preprocessing.py`, `src/features/feature_engineering.py`).
-2. Save your final output datasets (like the prepared `df_train_ready.parquet` or intermediate CSVs) in the `data/` directory.
-3. Ensure that your output schema is compatible with `src/models/classification_podium.py`.
+To train and evaluate the classification models (Podium Prediction):
+```bash
+python src/models/classification_podium.py
+```
 
-### For the Agent Handling Stage 3 (Regression Model)
-Your task is to predict the fastest lap times.
-1. Create your regression scripts inside the `src/models/` directory (e.g., `src/models/regression_fastest_lap.py`).
-2. Load the cleaned datasets from the `data/` directory.
-3. Save your evaluation metrics and predictions back into the `data/` directory (e.g., `regression_predictions.csv`, `regression_metrics.json`).
-4. **DO NOT** modify `classification_podium.py` as it is already complete.
+To train and evaluate the regression models (Fastest Lap Prediction):
+```bash
+python src/models/regression_fastest_lap.py
+```
 
-### For Stage 4 (Reporting)
-All SHAP plots, feature importance visualizations, and final text reports should be placed in the `docs/` directory.
-
----
-
-## 🛠️ Installation & Setup
-
-1. Clone the repository / Open the folder
-2. Create and activate a Virtual Environment
-   ```bash
-   python -m venv .venv
-   # Windows
-   .\.venv\Scripts\activate
-   # Mac/Linux
-   source .venv/bin/activate
-   ```
-3. Install Dependencies
-   ```bash
-   pip install -r requirements.txt
-   ```
+🧠 How the Algorithm Works
+The project follows a 4-Stage Roadmap:
+1. **Data Preprocessing**: Filters pre/post race data points to prevent data leakage and applies rigorous NaN management.
+2. **Feature Engineering**: Calculates driver forms, momentum scores, track history, and grid position strategies.
+3. **Model Selection**: Dedicated scripts train specialized models (LightGBM/XGBoost/Random Forest) for separate predictive targets.
+4. **Evaluation**: Outputs metrics and detailed visuals (saved in `docs/` and `data/`) to compare model efficacy and discover the most important features driving F1 race outcomes.
