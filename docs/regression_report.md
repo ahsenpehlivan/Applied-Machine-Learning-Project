@@ -178,3 +178,36 @@ The script produces:
 - `docs/regression_actual_vs_predicted.png`
 - `docs/regression_residuals.png`
 - `docs/regression_feature_importance.png`
+
+## 11. Using the Trained Model
+
+The saved model can be used without retraining:
+
+```bash
+python src/models/predict_fastest_lap.py historical \
+  --driver "Max Verstappen" \
+  --year 2024 \
+  --circuit "Circuit de Monaco"
+```
+
+This command finds the selected historical driver-race in the prepared dataset
+and prints the predicted lap, actual lap, and absolute error.
+
+For a new race, first create a CSV template containing all 29 required model
+features:
+
+```bash
+python src/models/predict_fastest_lap.py template \
+  --output data/new_race_features.csv
+```
+
+Fill one or more rows in that file after qualifying, then run:
+
+```bash
+python src/models/predict_fastest_lap.py file \
+  --input data/new_race_features.csv \
+  --output data/new_race_predictions.csv
+```
+
+The output contains `predicted_lap_ms` and a readable
+`predicted_lap_time` value such as `1:14.611`.
