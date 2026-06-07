@@ -127,5 +127,5 @@ python src/models/regression_fastest_lap.py
 
 ---
 <div align="center">
-  <i>Developed by Ahsen and Team.</i>
+  <i>Developed by Ahsen Pehlivan, Yiğit Enes Görgülü, Görkem Özden, Tayfun Özgür.</i>
 </div>
