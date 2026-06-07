@@ -8,30 +8,6 @@ A comprehensive Python-based machine learning pipeline designed to predict Formu
 - **Fastest Lap Prediction (Regression)**: Employs Random Forest and LightGBM regression models to predict the fastest lap times. Evaluated using MAE, RMSE, and R².
 - **Interpretability**: Integrates feature importance metrics and SHAP analysis for transparent ML predictions.
 
-📁 Project Structure
-.
-├── data/
-│   ├── df_master.parquet            # Merged and cleaned master dataset
-│   ├── df_model_ready.parquet       # Final dataset with engineered features
-│   ├── df_train_ready.parquet       # Scaled data ready for classification
-│   └── ...                          # Metrics (JSON), predictions (CSV), and models (Joblib)
-├── docs/
-│   ├── aşama1_rapor.txt             # Stage 1: Data preparation reports
-│   ├── aşama2_rapor.txt             # Stage 2: Feature engineering reports
-│   ├── classification_guide_tr.md   # Documentation for the classification model
-│   ├── regression_report.md         # Comprehensive regression analysis
-│   └── *.png                        # Model comparison and evaluation plots
-├── src/
-│   ├── features/
-│   │   ├── feature_engineering.ipynb # Notebook for exploratory feature analysis
-│   │   └── preprocessing.py         # Data cleaning and manipulation scripts
-│   └── models/
-│       ├── classification_podium.py # ML Classification models for Podium Prediction
-│       └── regression_fastest_lap.py# ML Regression models for Fastest Lap Prediction
-├── .gitignore                       # Ignored files and folders
-├── requirements.txt                 # Python project dependencies
-└── README.md                        # Project documentation
-
 🛠️ Installation & Setup
 Clone the repository / Open the folder
 
