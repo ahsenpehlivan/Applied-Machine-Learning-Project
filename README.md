@@ -12,6 +12,16 @@
 ---
 </div>
 
+## At a glance
+
+**Goal:** Predict Formula 1 podium finishes and fastest laps from historical race data.  
+**Approach:** Data preparation, feature engineering, classification, regression, and an interactive Streamlit demo.  
+**Team project:** Developed collaboratively by the contributors listed below.
+
+[Project report](Project_Final_Report.pdf) · [Streamlit app source](app.py) · [Model code](src/models/)
+
+---
+
 ## 🚀 Overview & Features
 
 This project utilizes decades of historical race data to engineer complex features, predict **Top 3 podium finishes** (Classification), and forecast the **fastest lap times** (Regression). 
